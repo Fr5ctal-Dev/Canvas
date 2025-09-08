@@ -42,28 +42,3 @@ class LineNumberWidget(QWidget):
             top = bottom
             bottom = top + line_height
 
-class CodeEditor(QPlainTextEdit):
-    def __init__(self):
-        super().__init__()
-        self.lineNumberArea = LineNumberWidget(self)
-        self.setViewportMargins(self.lineNumberArea.width(), 0, 0, 0)
-
-    def resizeEvent(self, event):
-        super().resizeEvent(event)
-        cr = self.contentsRect()
-        self.lineNumberArea.setGeometry(cr.x(), cr.y(), self.lineNumberArea.width(), cr.height())
-
-class MainWindow(QMainWindow):
-    def __init__(self):
-        super().__init__()
-        self.editor = CodeEditor()
-        self.setCentralWidget(self.editor)
-        self.editor.setPlainText("")
-
-if __name__ == "__main__":
-    import sys
-    app = QApplication(sys.argv)
-    window = MainWindow()
-    window.show()
-    sys.exit(app.exec())
-    

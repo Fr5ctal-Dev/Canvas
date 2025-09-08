@@ -1,11 +1,13 @@
-from PySide6.QtGui import QCloseEvent
 from .editors.script import ScriptEditor
-from PySide6 import QtWidgets
+from PySide6 import QtWidgets, QtCore
 
 
 class App(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
+        self.setWindowTitle('Canvas')
+        self.setMinimumSize(QtCore.QSize(700, 500))
+
         self.main_widget = QtWidgets.QWidget()
         self.main_layout = QtWidgets.QVBoxLayout(self.main_widget)
         self.setCentralWidget(self.main_widget)
