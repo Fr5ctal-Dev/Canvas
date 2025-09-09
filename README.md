@@ -2,7 +2,7 @@
 ![GitHub License](https://img.shields.io/github/license/Fr5ctal-Dev/Fragment)
 ![GitHub top language](https://img.shields.io/github/languages/top/Fr5ctal-Dev/Fragment)
 ## A lightweight, streamlined Python IDE
-Canvas is a fast, lightweight, streamlined Python IDE aimed for quick code prototyping and testing. Aimed to replace the default Python IDLE, Canvas makes your life easier by removing all unnecessary steps in testing code snippets such as file creation.
+Canvas is a fast, lightweight, streamlined Python IDE aimed for quick code prototyping and testing. Meant to replace the default Python IDLE, Canvas makes your life easier by removing all unnecessary steps in testing code snippets such as file creation.
 ![](screenshot.png)
 ## Installation
 This repository use UV for project management. To setup the environment, clone or download the repository and run the following commands:
