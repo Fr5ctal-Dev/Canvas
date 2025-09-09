@@ -25,7 +25,7 @@ class LineNumberWidget(QWidget):
 
     def paintEvent(self, event):
         painter = QPainter(self)
-        painter.fillRect(event.rect(), QColor(50, 50, 50))
+        painter.fillRect(event.rect(), QColor('#3e4451'))
         block = self.editor.firstVisibleBlock()
         block_number = block.blockNumber()
         line_height = int(self.editor.blockBoundingRect(block).height())
