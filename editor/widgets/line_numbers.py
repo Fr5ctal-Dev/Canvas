@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QApplication, QPlainTextEdit, QWidget, QMainWindow
+from PySide6.QtWidgets import QWidget
 from PySide6.QtGui import QPainter, QColor, QFont
 from PySide6.QtCore import Qt
 

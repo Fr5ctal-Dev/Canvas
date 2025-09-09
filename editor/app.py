@@ -13,15 +13,19 @@ class App(QtWidgets.QMainWindow):
         self.setCentralWidget(self.main_widget)
 
         self.tab_view = QtWidgets.QTabWidget()
-        self.main_layout.addWidget(self.tab_view)
         self.tab_view.setMovable(True)
         self.tab_view.setTabsClosable(True)
         self.tab_view.setUsesScrollButtons(True)
         self.tab_view.setDocumentMode(True)
         self.tab_view.tabCloseRequested.connect(self.delete_tab)
 
-        # TEST #
-        self.add_tab(ScriptEditor(), 'hello')
+        self.tab_view.addTab(ScriptEditor(), 'Python')
+
+        self.new_tab_button = QtWidgets.QPushButton('New Tab')
+        self.new_tab_button.clicked.connect(lambda: self.add_tab(ScriptEditor(), 'Python'))
+
+        self.main_layout.addWidget(self.new_tab_button)
+        self.main_layout.addWidget(self.tab_view)
 
     def add_tab(self, editor, name):
         tab = self.tab_view.addTab(editor, name)
@@ -32,6 +36,6 @@ class App(QtWidgets.QMainWindow):
         self.tab_view.removeTab(index)
 
     def closeEvent(self, event):
-        for index in range(self.tab_view.count()):
-            self.delete_tab(index)
+        for i in range(self.tab_view.count()):
+            self.delete_tab(0)
         return super().closeEvent(event)
