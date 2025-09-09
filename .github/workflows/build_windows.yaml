@@ -32,7 +32,7 @@ jobs:
         run: uv pip install pyinstaller
 
       - name: Build executable with PyInstaller
-        run: python -m PyInstaller --onefile --noconsole --name Canvas main.py --add-data editor:editor
+        run: uv run pyinstaller --onefile --noconsole --name Canvas main.py --add-data editor:editor
 
       - name: Upload EXE as Artifact
         uses: actions/upload-artifact@v4
